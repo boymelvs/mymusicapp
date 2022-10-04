@@ -1,0 +1,147 @@
+.cardPlayContainer {
+   width: 30%;
+   position: relative;
+   margin: 0 auto;
+
+   & .cardPlay {
+      @include flexBox(column, center, center, 20px);
+      padding: 20px 10px;
+      border-bottom: 5px solid $whisper;
+
+      @media (min-width: 992px) {
+         justify-content: flex-start;
+         padding: 20px 40px;
+         border: none;
+      }
+
+      & .cardPlayImg {
+         width: 350px;
+         border-radius: 15px;
+         overflow: hidden;
+
+         & img {
+            width: 100%;
+         }
+      }
+
+      & .titleDotContainer {
+         @include flexBox(row, unset, space-between, 0);
+         width: 350px;
+         position: relative;
+
+         & .cardPlayStatus {
+            @include flexBox(column, flex-start, center, 5px);
+            width: 100%;
+
+            & .status {
+               font-size: 18px;
+               color: $hawkes-light-blue;
+               font-weight: $font-weight-600;
+
+               @media (min-width: 992px) {
+                  font-size: 20px;
+               }
+
+               & span {
+                  font-weight: $font-weight-400;
+                  font-size: 18px;
+                  color: $hawkes-light-blue;
+               }
+            }
+
+            & .title {
+               font-size: 14px;
+               color: $hawkes-light-blue;
+               // font-weight: $font-weight-600;
+            }
+         }
+
+         & .cardPlayDot {
+            @include flexBox(column, center, center, 4px);
+            transition: all 200ms ease-in-out;
+            position: relative;
+
+            &:hover {
+               transform: scale(1.05);
+               cursor: pointer;
+            }
+
+            & .heart {
+               position: absolute;
+               top: -12px;
+               right: 5px;
+               width: 20px;
+            }
+         }
+
+         & #dotCheckbox {
+            display: none;
+            position: absolute;
+            visibility: hidden;
+         }
+
+         & #dotCheckbox:checked ~ .addFavorite {
+            display: block;
+         }
+
+         & .addFavorite {
+            display: none;
+            font-size: 14px;
+            padding: 20px;
+            position: absolute;
+            top: -60px;
+            right: 0;
+            border-radius: 5px;
+            background: $whisper;
+            box-shadow: 0 0 5px $black-pearl;
+
+            & .addFaveLabel {
+               position: relative;
+               font-weight: $font-weight-700;
+               color: $mariner;
+
+               &::before {
+                  content: "";
+                  position: absolute;
+                  bottom: -5px;
+                  left: 0;
+                  width: 100%;
+                  border-bottom: 1px solid $mariner;
+                  transform: scale(0, 1);
+                  transform-origin: right;
+                  transition: transform 300ms ease-in-out;
+               }
+
+               &:hover::before {
+                  transform: scale(1, 1);
+                  transform-origin: left;
+               }
+
+               &.active::before,
+               &.active-link::before {
+                  transform: scale(1, 1);
+                  transform-origin: left;
+               }
+
+               &:hover {
+                  cursor: pointer;
+               }
+            }
+
+            & .pointer {
+               display: block;
+               width: 5px;
+               height: 5px;
+               border: 15px solid transparent;
+               border-top: 0;
+               border-bottom: 15px solid $whisper;
+               position: absolute;
+               bottom: -5px;
+               right: 15px;
+               transform: rotate(45deg);
+               z-index: 0;
+            }
+         }
+      }
+   }
+}

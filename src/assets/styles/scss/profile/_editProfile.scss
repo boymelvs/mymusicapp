@@ -1,0 +1,199 @@
+.editProfileContainer {
+   @include flexBox(row, flex-start, center, 0);
+   width: 100%;
+   min-height: 100vh;
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsla(0, 0%, 0%, 0.5);
+      z-index: 0;
+   }
+
+   & .profile {
+      @include flexBox(column, center, center, 5px);
+      background: $hawkes-blue;
+      z-index: 10;
+      border-radius: 5px;
+      margin-top: 30px;
+      position: relative;
+
+      & h2 {
+         text-align: center;
+         color: $hawkes-light-blue;
+      }
+
+      & .delete {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         padding: 5px 10px;
+         border: none;
+         border-radius: 5px;
+         background: $light-red;
+         color: $hawkes-light-blue;
+
+         &:hover {
+            box-shadow: 0 0 2px $light-red;
+            opacity: 0.9;
+            cursor: pointer;
+         }
+
+         &:active {
+            transform: scale(0.98);
+         }
+      }
+
+      & #editProfileForm {
+         @include flexBox(column, center, center, 20px);
+         padding: 30px;
+         width: 350px;
+         border-radius: 5px;
+         background: $hawkes-light-blue;
+         position: relative;
+
+         @media (min-width: 768px) {
+            width: 450px;
+         }
+
+         & .infoContainer {
+            @include flexBox(row, flex-start, space-between, 20px);
+            width: 100%;
+
+            & .namesContainer {
+               @include flexBox(column, center, center, 20px);
+               width: 100%;
+
+               & .field {
+                  @include flexBox(column, flex-start, center, 0);
+                  width: 100%;
+
+                  & label {
+                     display: block;
+                     font-weight: $font-weight-600;
+                     color: $mariner;
+                     font-size: 14px;
+                  }
+
+                  & input {
+                     border: 1.5px solid $hawkes-blue;
+                     border-radius: 5px;
+                     outline: none;
+                     width: 100%;
+                     padding: 10px;
+                     background: $hawkes-light-blue;
+
+                     &:focus {
+                        border: 1.5px solid $mariner;
+                     }
+                  }
+               }
+            }
+
+            & .profilePicContainer {
+               @include flexBox(column, center, center, 0);
+               width: 200px;
+               height: 135px;
+               position: relative;
+               border-radius: 5px;
+               overflow: hidden;
+               cursor: pointer;
+
+               &::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  opacity: 0;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  transition: all 300ms ease-in-out;
+                  background: hsla(0, 0%, 0%, 0.3);
+               }
+
+               &:hover::before {
+                  opacity: 1;
+               }
+
+               &:hover > span {
+                  opacity: 1;
+               }
+
+               & .profPic {
+                  width: 100%;
+               }
+
+               & #imageInput {
+                  display: none;
+               }
+
+               & .uploadText {
+                  transition: all 300ms ease-in-out;
+                  opacity: 0;
+                  text-align: center;
+                  color: $whisper;
+                  position: absolute;
+
+                  & .size {
+                     display: block;
+                     font-size: 12px;
+                  }
+               }
+            }
+         }
+
+         & .warning {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 35px;
+            font-size: 12px;
+            color: $light-red;
+
+            &.active {
+               display: block;
+            }
+         }
+
+         & .btnContainer {
+            @include flexBox(row, center, center, 20px);
+            width: 100%;
+
+            & .btn {
+               border: 1px solid $mariner;
+               border-radius: 5px;
+               padding: 10px;
+               width: 100%;
+               font-size: 14px;
+               font-weight: $font-weight-600;
+
+               &:hover {
+                  cursor: pointer;
+                  transform: scale(1.01);
+               }
+
+               &:active {
+                  transform: scale(0.99);
+               }
+            }
+
+            & .cancelBtn {
+               color: $mariner;
+               background: $hawkes-light-blue;
+            }
+
+            & .deleteBtn {
+               background: $mariner;
+               color: $hawkes-light-blue;
+            }
+         }
+      }
+   }
+}

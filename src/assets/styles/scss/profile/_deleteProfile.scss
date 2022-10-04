@@ -1,0 +1,87 @@
+.deleteContainer {
+   @include flexBox(row, center, center, 0);
+   flex-wrap: wrap;
+   width: 100%;
+   min-height: 100vh;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 100;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsla(0, 0%, 0%, 0.5);
+      z-index: 0;
+   }
+}
+
+.modalDelete {
+   margin-top: -100px;
+   width: 350px;
+   padding: 35px;
+   border: 1px solid $mariner;
+   border-radius: 5px;
+   background: $whisper;
+   position: relative;
+   z-index: 99;
+
+   & .modalForm {
+      @include flexBox(column, center, center, 20px);
+      width: 100%;
+
+      & .modalName {
+         @include flexBox(column, center, center, 10px);
+         width: 100%;
+         font-weight: $font-weight-500;
+
+         & input {
+            border: 1.5px solid $hawkes-blue;
+            border-radius: 5px;
+            outline: none;
+            width: 100%;
+            padding: 10px;
+
+            &:focus {
+               border: 1.5px solid $mariner;
+            }
+         }
+      }
+
+      & .btnContainer {
+         @include flexBox(row, center, center, 20px);
+         width: 100%;
+
+         & .btn {
+            border: 1px solid $mariner;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+
+            &:hover {
+               cursor: pointer;
+               transform: scale(1.01);
+            }
+
+            &:active {
+               transform: scale(0.99);
+            }
+         }
+
+         & .cancelBtn {
+            color: $whisper;
+            background: $mariner;
+         }
+
+         & .deleteBtn {
+            background: $whisper;
+            color: $mariner;
+         }
+      }
+   }
+}

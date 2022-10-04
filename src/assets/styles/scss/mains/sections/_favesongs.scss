@@ -1,0 +1,90 @@
+.songContainer {
+   @include flexBox(column, center, center, 4px);
+   width: 100%;
+
+   & h2 {
+      font-size: 30px;
+      padding: 10px;
+      color: $hawkes-light-blue;
+   }
+
+   & .cardSongContainer {
+      @include flexBox(column, center, center, 10px);
+      width: 100%;
+      padding: 20px 10px;
+
+      @media (min-width: 768px) {
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 20px;
+      }
+
+      & .cardSong {
+         @include flexBox(row, center, flex-start, 10px);
+         padding: 10px;
+         border-radius: 5px;
+         width: 100%;
+         background: $whisper;
+         transition: all 200ms ease-in-out;
+         background: $hawkes-light-blue;
+         position: relative;
+
+         &:hover {
+            transform: translateY(-3%);
+            cursor: pointer;
+         }
+
+         &:hover .playBtn {
+            width: 30px;
+            position: absolute;
+            top: 30%;
+            left: 35%;
+            display: block;
+         }
+
+         @media (min-width: 768px) {
+            width: 250px;
+         }
+
+         & .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            z-index: 10;
+            font-weight: $font-weight-700;
+
+            &:hover {
+               transform: scale(1.05);
+            }
+         }
+
+         & .playBtn {
+            display: none;
+         }
+
+         & .cardSongImg {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            transition: all 200ms ease-in-out;
+
+            & .songImg {
+               width: 100%;
+            }
+         }
+
+         & .titleArtist {
+            & .cardSongTitle {
+               font-weight: $font-weight-700;
+            }
+
+            & .cardSongArtist {
+               font-size: 14px;
+            }
+         }
+      }
+   }
+}

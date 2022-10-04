@@ -1,0 +1,93 @@
+.signupContainer {
+   @include flexBox(row, center, center, 0);
+   width: 100%;
+   padding-top: 60px;
+
+   & #signupForm {
+      @include flexBox(column, center, center, 10px);
+      padding: 30px;
+      border-radius: 5px;
+      background: $hawkes-light-blue;
+      width: 350px;
+
+      @media (min-width: 768px) {
+         width: 500px;
+      }
+
+      & .fullName {
+         @include flexBox(column, center, center, 10px);
+         width: 100%;
+
+         @media (min-width: 768px) {
+            flex-direction: row;
+         }
+      }
+
+      & .field {
+         @include flexBox(column, flex-start, center, 0);
+         width: 100%;
+
+         & label {
+            display: block;
+            font-weight: $font-weight-600;
+            color: $mariner;
+            font-size: 14px;
+         }
+
+         & input {
+            border: 1.5px solid $hawkes-blue;
+            border-radius: 5px;
+            outline: none;
+            width: 100%;
+            padding: 10px;
+            background: $hawkes-light-blue;
+
+            &:focus {
+               border: 1.5px solid $mariner;
+            }
+
+            &.active {
+               background-image: url("../../images/error/error.svg");
+               background-repeat: no-repeat;
+               background-size: 15px;
+               background-position: center right 35px;
+               border: 1px solid $light-red;
+            }
+
+            &:focus.green-border {
+               border: 1px solid $green;
+            }
+         }
+
+         & .warning {
+            visibility: hidden;
+            font-size: 12px;
+            color: $light-red;
+            font-weight: $font-weight-600;
+
+            &.active {
+               visibility: visible;
+            }
+         }
+      }
+
+      & .signupbtn {
+         border: none;
+         border-radius: 5px;
+         padding: 15px;
+         width: 100%;
+         background: $mariner;
+         color: $hawkes-light-blue;
+         font-size: 16px;
+
+         &:hover {
+            cursor: pointer;
+            transform: scale(1.005);
+         }
+
+         &:active {
+            transform: scale(0.99);
+         }
+      }
+   }
+}

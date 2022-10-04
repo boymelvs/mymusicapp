@@ -1,0 +1,1645 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+/* warning */
+/* warning */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  background: hsl(225deg, 48%, 46%);
+  padding: 10px 20px 40px 20px;
+  max-width: 1440px;
+  min-width: 350px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+}
+@media (min-width: 992px) {
+  header {
+    padding: 10px 40px;
+  }
+}
+header .logoContainer {
+  width: 60px;
+}
+@media (min-width: 768px) {
+  header .logoContainer {
+    width: 80px;
+  }
+}
+header .logoContainer img {
+  width: 60px;
+}
+header .myNavs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+  padding-bottom: 10px;
+}
+@media (min-width: 768px) {
+  header .myNavs {
+    position: unset;
+    padding: 0;
+  }
+}
+header .myNavs .menuItem {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(220deg, 56%, 95%);
+}
+header .myNavs .menuItem::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(220deg, 56%, 95%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+header .myNavs .menuItem:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+header .myNavs .menuItem.active::before, header .myNavs .menuItem.active-link::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+header .profileSearchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  header .profileSearchContainer {
+    gap: 30px;
+  }
+}
+@media (min-width: 992px) {
+  header .profileSearchContainer {
+    gap: 40px;
+  }
+}
+header .profileSearchContainer .searchForm .search {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: hsl(220deg, 56%, 95%);
+  background-image: url("../../images/search/search_black.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center right;
+}
+header .profileSearchContainer .loginSignup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: hsl(220deg, 56%, 95%);
+}
+@media (max-width: 400px) {
+  header .profileSearchContainer .loginSignup {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  header .profileSearchContainer .loginSignup {
+    gap: 30px;
+  }
+}
+@media (min-width: 992px) {
+  header .profileSearchContainer .loginSignup {
+    gap: 40px;
+  }
+}
+header .profileSearchContainer .loginSignup .login, header .profileSearchContainer .loginSignup .signup {
+  text-decoration: none;
+  color: hsl(220deg, 56%, 95%);
+  position: relative;
+  cursor: pointer;
+}
+header .profileSearchContainer .loginSignup .login::before, header .profileSearchContainer .loginSignup .signup::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(220deg, 56%, 95%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+header .profileSearchContainer .loginSignup .login:hover::before, header .profileSearchContainer .loginSignup .signup:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+header .profileSearchContainer .loginSignup .login.active::before, header .profileSearchContainer .loginSignup .login.active-link::before, header .profileSearchContainer .loginSignup .signup.active::before, header .profileSearchContainer .loginSignup .signup.active-link::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+header .profileSearchContainer .avatarContainer .avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid hsl(220deg, 56%, 95%);
+  cursor: pointer;
+}
+header .profileSearchContainer .avatarContainer #profileCheckbox {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+}
+header .profileSearchContainer .avatarContainer .profile {
+  display: none;
+  flex-direction: column;
+  color: hsl(225deg, 48%, 46%);
+  background: hsl(220deg, 56%, 95%);
+  border-radius: 5px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  box-shadow: 0 0 5px hsl(212deg, 29%, 13%);
+  overflow: hidden;
+}
+header .profileSearchContainer .avatarContainer .profile .viewProfile, header .profileSearchContainer .avatarContainer .profile .logout {
+  padding: 20px 50px;
+  font-weight: 700;
+  text-decoration: none;
+  color: hsl(225deg, 48%, 46%);
+}
+header .profileSearchContainer .avatarContainer .profile .viewProfile:hover, header .profileSearchContainer .avatarContainer .profile .logout:hover {
+  color: hsl(220deg, 56%, 95%);
+  background: hsl(225deg, 48%, 46%);
+  cursor: pointer;
+}
+header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .profile {
+  display: flex;
+  z-index: 99;
+}
+
+.playerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .playerSection {
+    flex-direction: row;
+    padding: 15px 0;
+  }
+}
+
+/* Playcard */
+.cardPlayContainer {
+  width: 30%;
+  position: relative;
+  margin: 0 auto;
+}
+.cardPlayContainer .cardPlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 10px;
+  border-bottom: 5px solid hsl(0deg, 0%, 100%);
+}
+@media (min-width: 992px) {
+  .cardPlayContainer .cardPlay {
+    justify-content: flex-start;
+    padding: 20px 40px;
+    border: none;
+  }
+}
+.cardPlayContainer .cardPlay .cardPlayImg {
+  width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.cardPlayContainer .cardPlay .cardPlayImg img {
+  width: 100%;
+}
+.cardPlayContainer .cardPlay .titleDotContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: unset;
+  justify-content: space-between;
+  gap: 0;
+  width: 350px;
+  position: relative;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status {
+  font-size: 18px;
+  color: hsl(220deg, 56%, 95%);
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status {
+    font-size: 20px;
+  }
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status span {
+  font-weight: 400;
+  font-size: 18px;
+  color: hsl(220deg, 56%, 95%);
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .title {
+  font-size: 14px;
+  color: hsl(220deg, 56%, 95%);
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot .heart {
+  position: absolute;
+  top: -12px;
+  right: 5px;
+  width: 20px;
+}
+.cardPlayContainer .cardPlay .titleDotContainer #dotCheckbox {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+.cardPlayContainer .cardPlay .titleDotContainer #dotCheckbox:checked ~ .addFavorite {
+  display: block;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite {
+  display: none;
+  font-size: 14px;
+  padding: 20px;
+  position: absolute;
+  top: -60px;
+  right: 0;
+  border-radius: 5px;
+  background: hsl(0deg, 0%, 100%);
+  box-shadow: 0 0 5px hsl(212deg, 29%, 13%);
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel {
+  position: relative;
+  font-weight: 700;
+  color: hsl(225deg, 48%, 46%);
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(225deg, 48%, 46%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel.active::before, .cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel.active-link::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel:hover {
+  cursor: pointer;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .addFavorite .pointer {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border: 15px solid transparent;
+  border-top: 0;
+  border-bottom: 15px solid hsl(0deg, 0%, 100%);
+  position: absolute;
+  bottom: -5px;
+  right: 15px;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+.songContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+.songContainer h2 {
+  font-size: 30px;
+  padding: 10px;
+}
+.songContainer .cardSongContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media (min-width: 768px) {
+  .songContainer .cardSongContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+.songContainer .cardSongContainer .cardSong {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  background: hsl(0deg, 0%, 100%);
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+.songContainer .cardSongContainer .cardSong:hover {
+  transform: translateY(-3%);
+  cursor: pointer;
+}
+.songContainer .cardSongContainer .cardSong:hover .playBtn {
+  width: 30px;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+@media (min-width: 768px) {
+  .songContainer .cardSongContainer .cardSong {
+    width: 250px;
+  }
+}
+.songContainer .cardSongContainer .cardSong .heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  z-index: 10;
+}
+.songContainer .cardSongContainer .cardSong .heart:hover {
+  transform: scale(1.03);
+}
+.songContainer .cardSongContainer .cardSong .cardSongImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+.songContainer .cardSongContainer .cardSong .cardSongImg .songImg {
+  width: 100%;
+}
+.songContainer .cardSongContainer .cardSong .titleArtist .cardSongTitle {
+  font-size: 14px;
+  font-weight: 700;
+}
+.songContainer .cardSongContainer .cardSong .titleArtist .cardSongArtist {
+  padding-top: 5px;
+  font-size: 8px;
+}
+
+/* Favorite Song */
+.songContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+.songContainer h2 {
+  font-size: 30px;
+  padding: 10px;
+  color: hsl(220deg, 56%, 95%);
+}
+.songContainer .cardSongContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media (min-width: 768px) {
+  .songContainer .cardSongContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+.songContainer .cardSongContainer .cardSong {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  background: hsl(0deg, 0%, 100%);
+  transition: all 200ms ease-in-out;
+  background: hsl(220deg, 56%, 95%);
+  position: relative;
+}
+.songContainer .cardSongContainer .cardSong:hover {
+  transform: translateY(-3%);
+  cursor: pointer;
+}
+.songContainer .cardSongContainer .cardSong:hover .playBtn {
+  width: 30px;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  display: block;
+}
+@media (min-width: 768px) {
+  .songContainer .cardSongContainer .cardSong {
+    width: 250px;
+  }
+}
+.songContainer .cardSongContainer .cardSong .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  z-index: 10;
+  font-weight: 700;
+}
+.songContainer .cardSongContainer .cardSong .close:hover {
+  transform: scale(1.05);
+}
+.songContainer .cardSongContainer .cardSong .playBtn {
+  display: none;
+}
+.songContainer .cardSongContainer .cardSong .cardSongImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+.songContainer .cardSongContainer .cardSong .cardSongImg .songImg {
+  width: 100%;
+}
+.songContainer .cardSongContainer .cardSong .titleArtist .cardSongTitle {
+  font-weight: 700;
+}
+.songContainer .cardSongContainer .cardSong .titleArtist .cardSongArtist {
+  font-size: 14px;
+}
+
+/* Audio Player */
+.player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 350px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.player .progress {
+  display: flex;
+  flex-basis: 100%;
+  height: 10px;
+  padding: 2px 0;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.player .progress .progressFilled {
+  width: 100%;
+  background: hsl(47deg, 100%, 50%);
+  flex: 0;
+  flex-basis: 50%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.playerControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  width: 100%;
+  min-width: 350px;
+  position: relative;
+}
+@media (min-width: 800px) {
+  .playerControls {
+    padding: 0 10px;
+    flex-direction: row;
+  }
+}
+.playerControls .nextToPlay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  gap: 20px;
+  width: 100%;
+  min-height: 50px;
+  height: 100%;
+  border-radius: 5px;
+  background: hsl(220deg, 56%, 95%);
+  overflow: hidden;
+  cursor: pointer;
+}
+.playerControls .nextToPlay .nextToPlayImgContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  position: relative;
+}
+.playerControls .nextToPlay .nextToPlayImgContainer .nextPlayImg {
+  width: 50px;
+}
+.playerControls .nextToPlay .nextToPlayImgContainer .nextPlayBtn {
+  display: none;
+  position: absolute;
+  left: 15px;
+  width: 20px;
+}
+.playerControls .nextToPlay .nextPlayTitleArtist {
+  width: 100%;
+}
+.playerControls .nextToPlay .nextPlayTitleArtist .nextPlayTitle {
+  font-weight: 700;
+}
+.playerControls .nextToPlay .nextPlayTitleArtist .nextPlayArtist {
+  font-size: 14px;
+}
+.playerControls .nextToPlay:hover .nextPlayBtn {
+  display: block;
+}
+.playerControls .nextToPlay .nextSongText {
+  font-weight: 700;
+  padding-right: 20px;
+  text-align: right;
+  width: 50%;
+}
+.playerControls .speakerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 50px;
+}
+.playerControls .speakerContainer .timer {
+  color: hsl(0deg, 0%, 100%);
+  text-align: center;
+  width: 100%;
+}
+.playerControls .speakerContainer .speaker {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  height: 30px;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.9);
+  /* transform: rotate(-90deg); */
+  /* transform-origin: 40% -60%; */
+}
+.playerControls .speakerContainer .speaker .volume {
+  cursor: pointer;
+}
+.playerControls .speakerContainer .speaker label {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.playerBtnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  padding: 10px 20px;
+}
+.playerBtnContainer img {
+  width: 40px;
+  height: 40px;
+}
+.playerBtnContainer img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.playerBtnContainer img:active {
+  transform: scale(1);
+}
+
+.myMain {
+  color: hsl(225deg, 48%, 46%);
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1440px;
+  background: hsl(225deg, 48%, 46%);
+  min-width: 350px;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 100vh;
+  background: hsl(225deg, 48%, 46%);
+  max-width: 1440px;
+  width: 100%;
+}
+.loadingContainer .loadingText {
+  font-size: 20px;
+  color: hsl(220deg, 56%, 95%);
+}
+
+.myFooters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: hsl(225deg, 48%, 46%);
+  height: 70px;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 350px;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 14px;
+  padding: 20px;
+}
+.myFooters .codedBy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.myFooters .codedBy img {
+  width: 10px;
+}
+.myFooters .codedBy a {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+.myFooters .codedBy a span {
+  position: relative;
+}
+.myFooters .codedBy a span::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(0deg, 0%, 100%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+.myFooters .codedBy a span:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+.myFooters .termsPrivacyContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.myFooters .termsPrivacyContainer .policy {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+.myFooters .termsPrivacyContainer .policy::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(220deg, 56%, 95%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+.myFooters .termsPrivacyContainer .policy:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  padding-top: 60px;
+}
+.loginContainer #loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 5px;
+  background: hsl(220deg, 56%, 95%);
+  width: 350px;
+}
+@media (min-width: 768px) {
+  .loginContainer #loginForm {
+    width: 450px;
+  }
+}
+.loginContainer #loginForm .field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.loginContainer #loginForm .field label {
+  display: block;
+  font-weight: 600;
+  color: hsl(225deg, 48%, 46%);
+  font-size: 14px;
+}
+.loginContainer #loginForm .field input {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: hsl(220deg, 56%, 95%);
+}
+.loginContainer #loginForm .field input:focus {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.loginContainer #loginForm .field input.active {
+  background-image: url("../../images/error/error.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center right 25px;
+  border: 1px solid hsl(0deg, 100%, 63%);
+}
+.loginContainer #loginForm .field input:focus.green-border {
+  border: 1px solid hsl(154deg, 59%, 51%);
+}
+.loginContainer #loginForm .field .warning {
+  visibility: hidden;
+  font-size: 12px;
+  color: hsl(0deg, 100%, 63%);
+  font-weight: 600;
+}
+.loginContainer #loginForm .field .warning.active {
+  visibility: visible;
+}
+.loginContainer #loginForm .loginBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  background: hsl(225deg, 48%, 46%);
+  color: hsl(220deg, 56%, 95%);
+  font-size: 16px;
+}
+.loginContainer #loginForm .loginBtn:hover {
+  cursor: pointer;
+  transform: scale(1.005);
+}
+.loginContainer #loginForm .loginBtn:active {
+  transform: scale(0.99);
+}
+
+.signupContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  padding-top: 60px;
+}
+.signupContainer #signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+  border-radius: 5px;
+  background: hsl(220deg, 56%, 95%);
+  width: 350px;
+}
+@media (min-width: 768px) {
+  .signupContainer #signupForm {
+    width: 500px;
+  }
+}
+.signupContainer #signupForm .fullName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .signupContainer #signupForm .fullName {
+    flex-direction: row;
+  }
+}
+.signupContainer #signupForm .field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.signupContainer #signupForm .field label {
+  display: block;
+  font-weight: 600;
+  color: hsl(225deg, 48%, 46%);
+  font-size: 14px;
+}
+.signupContainer #signupForm .field input {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: hsl(220deg, 56%, 95%);
+}
+.signupContainer #signupForm .field input:focus {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.signupContainer #signupForm .field input.active {
+  background-image: url("../../images/error/error.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center right 35px;
+  border: 1px solid hsl(0deg, 100%, 63%);
+}
+.signupContainer #signupForm .field input:focus.green-border {
+  border: 1px solid hsl(154deg, 59%, 51%);
+}
+.signupContainer #signupForm .field .warning {
+  visibility: hidden;
+  font-size: 12px;
+  color: hsl(0deg, 100%, 63%);
+  font-weight: 600;
+}
+.signupContainer #signupForm .field .warning.active {
+  visibility: visible;
+}
+.signupContainer #signupForm .signupbtn {
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  background: hsl(225deg, 48%, 46%);
+  color: hsl(220deg, 56%, 95%);
+  font-size: 16px;
+}
+.signupContainer #signupForm .signupbtn:hover {
+  cursor: pointer;
+  transform: scale(1.005);
+}
+.signupContainer #signupForm .signupbtn:active {
+  transform: scale(0.99);
+}
+
+.createPlaylistContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.createPlaylistContainer .title {
+  text-align: center;
+  font-size: 35px;
+  color: hsl(225deg, 48%, 46%);
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+.createPlaylistContainer .createPlaylist {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  width: 150px;
+}
+.createPlaylistContainer .createPlaylist .createBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background: hsl(225deg, 48%, 46%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 16px;
+}
+.createPlaylistContainer .createPlaylist .createBtn:hover {
+  cursor: pointer;
+  transform: scale(1);
+}
+.createPlaylistContainer .createPlaylist .createBtn:active {
+  transform: scale(0.99);
+}
+.createPlaylistContainer .playListContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modalContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0deg, 0%, 0%, 0.5);
+  z-index: 0;
+}
+
+.modal {
+  margin-top: -100px;
+  width: 350px;
+  padding: 35px;
+  border: 1px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  background: hsl(220deg, 56%, 95%);
+  position: relative;
+  z-index: 99;
+}
+.modal .modalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.modal .modalForm .modalName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-weight: 500;
+}
+.modal .modalForm .modalName h2 {
+  color: hsl(225deg, 48%, 46%);
+}
+.modal .modalForm .modalName input {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+}
+.modal .modalForm .modalName input:focus {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.modal .modalForm .btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.modal .modalForm .btnContainer .btn {
+  border: 1px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+}
+.modal .modalForm .btnContainer .btn:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.modal .modalForm .btnContainer .btn:active {
+  transform: scale(0.99);
+}
+.modal .modalForm .btnContainer .cancelBtn {
+  color: hsl(220deg, 56%, 95%);
+  background: hsl(225deg, 48%, 46%);
+}
+.modal .modalForm .btnContainer .deleteBtn {
+  background: hsl(220deg, 56%, 95%);
+  color: hsl(225deg, 48%, 46%);
+}
+
+.notFound {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  margin-top: 50px;
+}
+.notFound .notFoundName h2 {
+  font-size: 20px;
+  color: hsl(220deg, 56%, 95%);
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 10px;
+  width: 100%;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .profileContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.profileContainer .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+}
+.profileContainer .profile .profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  background: hsl(220deg, 56%, 95%);
+  border: 1px solid hsl(225deg, 48%, 46%);
+  max-width: 350px;
+  position: relative;
+}
+.profileContainer .profile .profileCard .profPic {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.profileContainer .profile .profileCard .profPic img {
+  width: 100%;
+}
+.profileContainer .profile .profileCard .profInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+.profileContainer .profile .profileCard .profInfo .name {
+  font-size: 20px;
+  color: hsl(225deg, 48%, 46%);
+  font-weight: 700;
+  text-align: center;
+  max-width: 350px;
+}
+.profileContainer .profile .profileCard .profInfo .name .edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: hsl(225deg, 48%, 46%);
+  cursor: pointer;
+}
+.profileContainer .profile .profileCard .profInfo .name .edit::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(225deg, 48%, 46%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+.profileContainer .profile .profileCard .profInfo .name .edit:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+.profileContainer .profile .profileCard .profInfo .email {
+  font-size: 14px;
+  font-weight: 600;
+}
+.profileContainer .favoritesContainer {
+  width: 100%;
+}
+.profileContainer .favoritesContainer h2 {
+  text-align: center;
+  color: hsl(220deg, 56%, 95%);
+}
+.profileContainer .favoritesContainer .favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media (min-width: 768px) {
+  .profileContainer .favoritesContainer .favorites {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+.profileContainer .favoritesContainer .favorites .cardSong {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 320px;
+  width: 100%;
+  background: hsl(220deg, 56%, 95%);
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .profileContainer .favoritesContainer .favorites .cardSong {
+    width: 250px;
+  }
+}
+.profileContainer .favoritesContainer .favorites .cardSong .cardSongImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+.profileContainer .favoritesContainer .favorites .cardSong .cardSongImg .songImg {
+  width: 100%;
+}
+.profileContainer .favoritesContainer .favorites .cardSong .titleArtist .cardSongTitle {
+  font-weight: 700;
+}
+.profileContainer .favoritesContainer .favorites .cardSong .titleArtist .cardSongArtist {
+  font-size: 14px;
+}
+
+.editProfileContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.editProfileContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0deg, 0%, 0%, 0.5);
+  z-index: 0;
+}
+.editProfileContainer .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: hsl(225deg, 48%, 46%);
+  z-index: 10;
+  border-radius: 5px;
+  margin-top: 30px;
+  position: relative;
+}
+.editProfileContainer .profile h2 {
+  text-align: center;
+  color: hsl(220deg, 56%, 95%);
+}
+.editProfileContainer .profile .delete {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: hsl(0deg, 100%, 63%);
+  color: hsl(220deg, 56%, 95%);
+}
+.editProfileContainer .profile .delete:hover {
+  box-shadow: 0 0 2px hsl(0deg, 100%, 63%);
+  opacity: 0.9;
+  cursor: pointer;
+}
+.editProfileContainer .profile .delete:active {
+  transform: scale(0.98);
+}
+.editProfileContainer .profile #editProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  width: 350px;
+  border-radius: 5px;
+  background: hsl(220deg, 56%, 95%);
+  position: relative;
+}
+@media (min-width: 768px) {
+  .editProfileContainer .profile #editProfileForm {
+    width: 450px;
+  }
+}
+.editProfileContainer .profile #editProfileForm .infoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field label {
+  display: block;
+  font-weight: 600;
+  color: hsl(225deg, 48%, 46%);
+  font-size: 14px;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field input {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: hsl(220deg, 56%, 95%);
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field input:focus {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 200px;
+  height: 135px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 300ms ease-in-out;
+  background: hsla(0deg, 0%, 0%, 0.3);
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer:hover::before {
+  opacity: 1;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer:hover > span {
+  opacity: 1;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer .profPic {
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer #imageInput {
+  display: none;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer .uploadText {
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer .uploadText .size {
+  display: block;
+  font-size: 12px;
+}
+.editProfileContainer .profile #editProfileForm .warning {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  font-size: 12px;
+  color: hsl(0deg, 100%, 63%);
+}
+.editProfileContainer .profile #editProfileForm .warning.active {
+  display: block;
+}
+.editProfileContainer .profile #editProfileForm .btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .btnContainer .btn {
+  border: 1px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+}
+.editProfileContainer .profile #editProfileForm .btnContainer .btn:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.editProfileContainer .profile #editProfileForm .btnContainer .btn:active {
+  transform: scale(0.99);
+}
+.editProfileContainer .profile #editProfileForm .btnContainer .cancelBtn {
+  color: hsl(225deg, 48%, 46%);
+  background: hsl(220deg, 56%, 95%);
+}
+.editProfileContainer .profile #editProfileForm .btnContainer .deleteBtn {
+  background: hsl(225deg, 48%, 46%);
+  color: hsl(220deg, 56%, 95%);
+}
+
+.deleteContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.deleteContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0deg, 0%, 0%, 0.5);
+  z-index: 0;
+}
+
+.modalDelete {
+  margin-top: -100px;
+  width: 350px;
+  padding: 35px;
+  border: 1px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  background: hsl(0deg, 0%, 100%);
+  position: relative;
+  z-index: 99;
+}
+.modalDelete .modalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.modalDelete .modalForm .modalName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-weight: 500;
+}
+.modalDelete .modalForm .modalName input {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+}
+.modalDelete .modalForm .modalName input:focus {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.modalDelete .modalForm .btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.modalDelete .modalForm .btnContainer .btn {
+  border: 1px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+.modalDelete .modalForm .btnContainer .btn:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.modalDelete .modalForm .btnContainer .btn:active {
+  transform: scale(0.99);
+}
+.modalDelete .modalForm .btnContainer .cancelBtn {
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(225deg, 48%, 46%);
+}
+.modalDelete .modalForm .btnContainer .deleteBtn {
+  background: hsl(0deg, 0%, 100%);
+  color: hsl(225deg, 48%, 46%);
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  padding: 30px;
+  color: hsl(220deg, 56%, 95%);
+}
+.aboutContainer h2 {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+.aboutContainer .para {
+  text-align: justify;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.privacyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  padding: 30px;
+  color: hsl(220deg, 56%, 95%);
+}
+.privacyContainer h2 {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+.privacyContainer .para {
+  text-align: justify;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  color: hsl(220deg, 56%, 95%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  background: hsl(220deg, 56%, 95%);
+}
+
+/*# sourceMappingURL=styles.css.map */

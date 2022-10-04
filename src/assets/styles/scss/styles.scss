@@ -1,0 +1,25 @@
+@import "./global/topology";
+
+*,
+::before,
+::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   position: relative;
+   color: $hawkes-light-blue;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1px;
+   width: 100%;
+   font-family: $font-fam-raleway;
+   background: $hawkes-light-blue;
+}

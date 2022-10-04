@@ -1,0 +1,19 @@
+.privacyContainer {
+   @include flexBox(column, center, center, 0);
+   width: 100%;
+   padding: 30px;
+   color: $hawkes-light-blue;
+
+   & h2 {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+   }
+
+   & .para {
+      text-align: justify;
+      max-width: 1000px;
+      padding: 20px;
+      // font-weight: $font-weight-600;
+   }
+}

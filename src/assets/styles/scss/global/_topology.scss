@@ -1,0 +1,29 @@
+@import "./variables";
+
+@import "./mixins";
+
+@import "../headers/header";
+
+@import "../mains/main";
+
+@import "../footers/footers";
+
+@import "../loginsignup/login";
+
+@import "../loginsignup/signup";
+
+@import "../playlist/createPlaylist";
+
+@import "../playlist/deleteModal";
+
+@import "../modal/notfound";
+
+@import "../profile/viewProfile";
+
+@import "../profile/editProfile";
+
+@import "../profile/deleteProfile";
+
+@import "../abouts/about";
+
+@import "../privacy/privacy";
