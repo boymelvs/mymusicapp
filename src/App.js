@@ -8,8 +8,8 @@ import Footers from "./components/footers/Footers";
 import sampleSong from "./assets/songs/Songs";
 import loadingImg from "./assets/images/fave/loading.svg";
 import randomSongs from "./components/randomSongs/RandomSongs";
-// axios.defaults.baseURL = "http://localhost:8000";
-axios.defaults.baseURL = "https://musicappserver-kodego-proj.herokuapp.com/";
+axios.defaults.baseURL = "http://localhost:8000";
+// axios.defaults.baseURL = "https://musicappserver-kodego-proj.herokuapp.com/";
 
 function App() {
    let navigate = useNavigate();

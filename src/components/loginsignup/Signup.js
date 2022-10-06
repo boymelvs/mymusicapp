@@ -47,6 +47,7 @@ const Signup = ({ setIsAdmin }) => {
                navigate("/");
             })
             .catch((error) => {
+               console.log(error);
                console.log(error.response.data);
                setUser({ ...user, error_list: error.response.data });
             });
