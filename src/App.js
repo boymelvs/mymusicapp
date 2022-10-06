@@ -9,7 +9,7 @@ import sampleSong from "./assets/songs/Songs";
 import loadingImg from "./assets/images/fave/loading.svg";
 import randomSongs from "./components/randomSongs/RandomSongs";
 // axios.defaults.baseURL = "http://localhost:8000";
-axios.defaults.baseURL = "https://mymusicapp-server.onrender.com";
+axios.defaults.baseURL = "https://mymusicapp-server-production.up.railway.app/";
 
 function App() {
    let navigate = useNavigate();
